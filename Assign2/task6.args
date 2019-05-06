@@ -1,1 +1,0 @@
-(println (powerSet '(d u e z c s i)))
