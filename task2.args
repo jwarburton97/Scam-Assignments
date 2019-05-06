@@ -1,3 +1,0 @@
- (define (f a b) (+ a b))
-    (inspect ((curry f) 1))
-    (inspect (((curry f) 1) 1))
