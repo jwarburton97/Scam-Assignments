@@ -1,0 +1,21 @@
+(define (rsd n s)
+    (define (iter n s)
+        (cond
+            ((= n 0) (print "..."))
+            (else
+                (print (fmt "%.5f" (stream-car s)) ",")
+                (iter (- n 1) (stream-cdr s)))
+            )
+        )
+    (print "(")
+    (iter n s)
+    (print ")")
+    )
+
+(define qs (quad 2 1 4 0.0384615385))
+(define is (integrate qs 0.0384615385))
+(define ds (derivate is 0.0384615385 (stream-car qs)))
+(rsd 5 qs) (println)
+(rsd 5 is) (println)
+(rsd 5 ds) (println)
+(inspect (same-stream? qs ds 10 .001))
