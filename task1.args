@@ -1,2 +1,0 @@
-(println (range 1000 1000000 1000))
-    (for-loop (range 1000 1000000 1000) (lambda (i) (inspect i)))
