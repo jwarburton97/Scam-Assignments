@@ -1,4 +1,4 @@
-# ProgLan-Assign2
+# Programming Languages - Assignment 2
 The second scheme programming assignment for my Programming Languages Course
 
 To find the specs required for these programs and to get a better understanding of
