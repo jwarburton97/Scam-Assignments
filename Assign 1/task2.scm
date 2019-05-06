@@ -1,0 +1,20 @@
+(define (main)
+	(setPort (open (getElement ScamArgs 1) 'read))
+	(define arg (readExpr))
+	(define arg2(readExpr))
+	(define arg3(readExpr))
+	(println "((mandelbrot " arg ") " (real arg2) " " (real arg3) ") is " ((mandelbrot-iter arg)arg2 arg3))
+	)
+
+(define (mandelbrot-iter threshold)
+    (define (mandelbrot x y r s count)
+        (if (> (+ (* r r) (* s s)) 4)
+            count
+            (if (> count threshold)
+                0
+                (mandelbrot x y (+ (- (* r r) (* s s)) x) (+ (* 2 r s) y) (+ count 1))
+            )
+        )
+    )
+    (lambda (x y) (mandelbrot x y 0.0 0.0 0))
+)
